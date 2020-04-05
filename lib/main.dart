@@ -24,7 +24,7 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-      return  new Scaffold(
+    return  new Scaffold(
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -99,7 +99,7 @@ class MyHomePage extends StatelessWidget {
                       onTap: (){
                         Navigator.push(context, MaterialPageRoute(
                           builder: (context)=>LoginPage(),
-                        )) ;
+                        ));
                       },
                       child: new Container(
                         alignment: Alignment.center,

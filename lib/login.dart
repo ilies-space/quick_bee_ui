@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'home.dart';
 import 'stacked_icons.dart';
 class LoginPage extends StatelessWidget {
   @override
@@ -20,22 +21,22 @@ class LoginPage extends StatelessWidget {
             //TOP LOGO :
             new StackIcons(),
             new Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.only(top:8.0,bottom: 80),
-              child: Text("Quick Bee",style: new TextStyle(
-                  fontSize: 30.0
-              ),),
-            )
-          ],),
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.only(top:8.0,bottom: 80),
+                  child: Text("Quick Bee",style: new TextStyle(
+                      fontSize: 30.0
+                  ),),
+                )
+              ],),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 0.0),
               child: new TextField(
                 decoration: new InputDecoration(
-                  labelText: 'Email'
+                    labelText: 'Email'
                 ),
-                ),
+              ),
             ),
             new SizedBox(height: 15.0),
             Padding(
@@ -53,17 +54,24 @@ class LoginPage extends StatelessWidget {
                 Expanded(
                   child: Padding  (
                     padding: const EdgeInsets.only(left: 20.0,right: 5.0,top: 10.0),
-                    child: new Container(
-                      alignment: Alignment.center,
-                      height: 70.0,
-                      decoration: new BoxDecoration(
+                    child: GestureDetector(
+                      onTap: (){
+                        Navigator.push(context, MaterialPageRoute(
+                          builder: (context)=>HomePage(),
+                        ));
+                      },
+                      child: new Container(
+                        alignment: Alignment.center,
+                        height: 70.0,
+                        decoration: new BoxDecoration(
                           color: Color(0xFF18D191),
-                        borderRadius: new BorderRadius.circular(10.2),
+                          borderRadius: new BorderRadius.circular(10.2),
+                        ),
+                        child: new Text("Login",style: TextStyle(
+                            fontSize: 20.0,
+                            color: Colors.white
+                        ),),
                       ),
-                      child: new Text("Login",style: TextStyle(
-                          fontSize: 20.0,
-                          color: Colors.white
-                      ),),
                     ),
 
                   ),
@@ -99,7 +107,7 @@ class LoginPage extends StatelessWidget {
                     new Text("creact a new acount",style: TextStyle(
                         fontSize: 17.0,
                         color: Color(0xFF18D191),
-                      fontWeight: FontWeight.bold
+                        fontWeight: FontWeight.bold
 
                     )),
                   ],
