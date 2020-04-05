@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'login.dart';
 
 void main() => runApp(QuickBee());
 
@@ -23,7 +24,7 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    return  new Scaffold(
+      return  new Scaffold(
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -94,17 +95,24 @@ class MyHomePage extends StatelessWidget {
                 Expanded(
                   child: Padding  (
                     padding: const EdgeInsets.only(left: 20.0,right: 10.0,top: 10.0),
-                    child: new Container(
-                      alignment: Alignment.center,
-                      height: 70.0,
-                      decoration: new BoxDecoration(
-                        color: Color(0xFF18D191),
-                        borderRadius: new BorderRadius.circular(10.2),
+                    child: GestureDetector(
+                      onTap: (){
+                        Navigator.push(context, MaterialPageRoute(
+                          builder: (context)=>LoginPage(),
+                        )) ;
+                      },
+                      child: new Container(
+                        alignment: Alignment.center,
+                        height: 70.0,
+                        decoration: new BoxDecoration(
+                          color: Color(0xFF18D191),
+                          borderRadius: new BorderRadius.circular(10.2),
+                        ),
+                        child: new Text("Sing In With Email",style: TextStyle(
+                          fontSize: 20.0,
+                          color: Colors.white
+                        ),),
                       ),
-                      child: new Text("Sing In With Email",style: TextStyle(
-                        fontSize: 20.0,
-                        color: Colors.white
-                      ),),
                     ),
 
                   ),
